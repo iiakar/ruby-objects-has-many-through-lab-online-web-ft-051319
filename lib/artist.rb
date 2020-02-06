@@ -1,4 +1,3 @@
-
 class Artist
   attr_accessor :name
 
@@ -13,8 +12,8 @@ class Artist
     @@all
   end
 
-  def new_song(song,genre)
-    Song.new(song,self,genre)
+  def new_song(name,genre)
+    Song.new(name,self,genre)
   end
 
   def songs
@@ -24,8 +23,8 @@ class Artist
   end
 
   def genres
-    songs.collect do |song|
+    songs.map do |song|
       song.genre
     end
-  end
-  end
+  end 
+end
